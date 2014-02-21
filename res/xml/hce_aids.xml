@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<host-apdu-service xmlns:android="http://schemas.android.com/apk/res/android"
+    android:apduServiceBanner="@drawable/banner"
+    android:description="@string/lab_carddesc"
+    android:requireDeviceUnlock="false" >
+
+    <aid-group
+        android:category="payment"
+        android:description="@string/lab_aiddesc_main" >
+        <aid-filter android:name="F04E4643535059" /> <!-- nfcspy xposed mod -->
+        <aid-filter android:name="F04E66E75C02D8" /> <!-- androcheck's xposed mod (xda) -->
+
+        <aid-filter android:name="315041592E5359532E4444463031" /> <!-- emv pse -->
+        <aid-filter android:name="325041592E5359532E4444463031" /> <!-- emv ppse -->
+
+        <aid-filter android:name="A000000333010101" /> <!-- union pay debit -->
+        <aid-filter android:name="A000000333010102" /> <!-- union pay credit -->
+        <aid-filter android:name="A000000333010103" /> <!-- union pay quasi-credit -->
+        <aid-filter android:name="A000000333010106" /> <!-- union pay electronic cash -->
+
+        <aid-filter android:name="A0000000031010" /> <!-- visa credit or debit -->
+        <aid-filter android:name="A0000000032010" /> <!-- visa electron -->
+        <aid-filter android:name="A0000000032020" /> <!-- visa pay -->
+        <aid-filter android:name="A0000000038010" /> <!-- visa plus -->
+
+        <aid-filter android:name="A0000000041010" /> <!-- mastercard credit or debit -->
+        <aid-filter android:name="A0000000049999" /> <!-- mastercard paypass -->
+        <aid-filter android:name="A0000000043060" /> <!-- mastercard maestro debit -->
+        <aid-filter android:name="A0000000046000" /> <!-- mastercard cirrus atm card -->
+        <aid-filter android:name="A0000000050001" /> <!-- mastercard maestro uk -->
+
+        <aid-filter android:name="A00000002501" /> <!-- american express -->
+        <aid-filter android:name="A0000000651010" /> <!-- japan credit bureau -->
+        <aid-filter android:name="A0000003591010028001" /> <!-- zka (germany) -->
+        <aid-filter android:name="A00000035910100380" /> <!-- eaps bancomat (italy) -->
+        <aid-filter android:name="A0000003241010" /> <!-- discover zip -->
+        <aid-filter android:name="A0000002771010" /> <!-- interac (canada) -->
+        <aid-filter android:name="A00000022820101010" /> <!-- span2 (saudi arabia) -->
+        <aid-filter android:name="A0000000421010" /> <!-- cb (france) credit or debit -->
+        <aid-filter android:name="A0000000422010" /> <!-- cb (france) debit -->
+        <aid-filter android:name="A0000001211010" /> <!-- dankort (denmark) debit card -->
+        <aid-filter android:name="A0000001523010" /> <!-- diners club/discover -->
+        <aid-filter android:name="A0000001544442" /> <!-- banrisul (brazil) -->
+        <aid-filter android:name="A0000005241010" /> <!-- rupay (india) -->
+    </aid-group>
+    <aid-group
+        android:category="other"
+        android:description="@string/lab_aiddesc_other" >
+        <aid-filter android:name="A00000000386980701" /> <!-- city union -->
+        <aid-filter android:name="504159" /> <!-- shenzhentong -->
+        <aid-filter android:name="415031" /> <!-- shenzhentong -->
+        <aid-filter android:name="415032" /> <!-- shenzhentong -->
+        <aid-filter android:name="5041592E535A54" /> <!-- shenzhentong -->
+        <aid-filter android:name="4150312E5748435443" /> <!-- wuhantong -->
+
+        <aid-filter android:name="A00000000101" /> <!-- other -->
+        <aid-filter android:name="A0000000023060D15800" /> <!-- other -->
+        <aid-filter android:name="A0000000030000" /> <!-- other -->
+        <aid-filter android:name="A000000003000000" /> <!-- other -->
+        <aid-filter android:name="A0000000032410" /> <!-- other -->
+        <aid-filter android:name="A0000000033010" /> <!-- other -->
+        <aid-filter android:name="A000000004000000" /> <!-- other -->
+        <aid-filter android:name="A0000000041010" /> <!-- google wallet -->
+        <aid-filter android:name="A0000000183003010000000000000000" /> <!-- other -->
+        <aid-filter android:name="A000000018434D00" /> <!-- other -->
+        <aid-filter android:name="A000000063504B43532D3135" /> <!-- other -->
+        <aid-filter android:name="A000000069" /> <!-- other -->
+        <aid-filter android:name="A0000001510000" /> <!-- other -->
+        <aid-filter android:name="A000000167413000FF" /> <!-- other -->
+        <aid-filter android:name="A000000167455349474E" /> <!-- other -->
+        <aid-filter android:name="A0000002164954534F2D31" /> <!-- other -->
+        <aid-filter android:name="A0000002471001" /> <!-- other -->
+        <aid-filter android:name="A00000024802" /> <!-- other -->
+        <aid-filter android:name="A00000024803" /> <!-- other -->
+        <aid-filter android:name="A000000291D05600019001" /> <!-- other -->
+        <aid-filter android:name="A00000030800001000" /> <!-- other -->
+        <aid-filter android:name="A0000003570000" /> <!-- other -->
+        <aid-filter android:name="A0000003964D66344D0002" /> <!-- other -->
+        <aid-filter android:name="A0000004762010" /> <!-- other -->
+        <aid-filter android:name="A0000004763030" /> <!-- other -->
+        <aid-filter android:name="D276000025455002" /> <!-- other -->
+        <aid-filter android:name="D27600006601" /> <!-- other -->
+        <aid-filter android:name="D27600008501" /> <!-- other -->
+        <aid-filter android:name="D2760000850101" /> <!-- other -->
+        <aid-filter android:name="D27600012401" /> <!-- other -->
+        <aid-filter android:name="D2760001354B414E4D303100" /> <!-- other -->
+        <aid-filter android:name="D4100000030001" /> <!-- other -->
+        <aid-filter android:name="D4100000140001" /> <!-- other -->
+    </aid-group>
+
+</host-apdu-service>

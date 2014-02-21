@@ -1,0 +1,56 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="@dimen/margin_window" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/btnDiscover"
+            style="@style/button"
+            android:layout_alignParentRight="true"
+            android:onClick="startDiscover"
+            android:text="@string/lab_p2p_discover" />
+
+        <Button
+            android:id="@+id/btnDisconnect"
+            style="@style/button"
+            android:layout_toLeftOf="@+id/btnDiscover"
+            android:onClick="disconnectPeer"
+            android:text="@string/lab_p2p_disconnect" />
+
+        <TextView
+            style="@style/label"
+            android:layout_width="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@+id/btnDisconnect"
+            android:gravity="left|bottom"
+            android:text="@string/lab_p2p_me" />
+    </RelativeLayout>
+
+    <View style="@style/splitter" />
+
+    <TextView
+        android:id="@+id/txtThisdevice"
+        style="@style/label"
+        android:paddingLeft="@dimen/margin_splitter"
+        android:textSize="@dimen/font_small" />
+
+    <TextView
+        style="@style/label"
+        android:gravity="left|bottom"
+        android:text="@string/lab_p2p_peers" />
+
+    <View
+        style="@style/splitter"
+        android:layout_marginBottom="@dimen/margin_splitter" />
+
+    <ListView
+        android:id="@+id/list"
+        style="@style/list"
+        android:choiceMode="singleChoice" />
+
+</LinearLayout>

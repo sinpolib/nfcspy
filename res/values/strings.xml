@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">NFC Spy</string>
+    <string name="action_about">About</string>
+    <string name="action_ok">OK</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_viewlogs">View Logs Cache</string>
+    <string name="action_clearlogs">Clear Logs Cache</string>
+    <string name="action_copy">Copy</string>
+    <string name="action_save">Save Logs</string>
+    <string name="action_share">Share</string>
+    <string name="action_settings">Manage WiFi Direct</string>
+    <string name="status_waitting">Waitting&#8230;</string>
+    <string name="status_success">\u0020Successful!</string>
+    <string name="status_failure">\u0020Failed!</string>
+    <string name="status_no_nfc">NFC Is Not Enabled!</string>
+    <string name="status_no_hce">Not Suport HCE! (Need android 4.4 or greater)</string>
+    <string name="status_no_wifi">WiFi Is Not Enabled!</string>
+    <string name="status_deactivated">--- %1$s HCE Deactivated. [%2$s]</string>
+    <string name="status_init">Initialization</string>
+    <string name="status_getaddr">Get P2P Link Info</string>
+    <string name="status_disconn">Close Socket</string>
+    <string name="status_connect">Open Socket</string>
+    <string name="status_p2p_accept">Group Owner Accept Connect</string>
+    <string name="status_p2p_client">Connect To Group Owner</string>
+    <string name="status_p2p_connected">Connected</string>
+    <string name="status_p2p_invited">Invited</string>
+    <string name="status_p2p_failed">Failed</string>
+    <string name="status_p2p_available">Available</string>
+    <string name="status_p2p_unavailable">Unavailable</string>
+    <string name="hint_chat">Type Message</string>
+    <string name="hint_file">Log file name</string>
+    <string name="hint_note">Notes [Optional]</string>
+    <string name="lab_chat">Send</string>
+    <string name="lab_clear">Clear</string>
+    <string name="lab_start">Start</string>
+    <string name="lab_stop">Stop</string>
+    <string name="lab_highspeed">HiSpeed</string>
+    <string name="lab_p2p">Manage WiFi Direct</string>
+    <string name="lab_p2p_discover">Discover</string>
+    <string name="lab_p2p_connect">Connect</string>
+    <string name="lab_p2p_disconnect">Disconnect</string>
+    <string name="lab_p2p_me">Me</string>
+    <string name="lab_p2p_peers">Peers</string>
+    <string name="lab_carddesc">NFCSpy Card</string>
+    <string name="lab_aiddesc_main">AID_GROUP_MAIN</string>
+    <string name="lab_aiddesc_other">AID_GROUP_OTHER</string>
+    <string name="event_log_copy">All data has been copied to clipboard</string>
+    <string name="event_log_save">All data has been saved to %1$s</string>
+    <string name="event_log_notsave">Error occurred when saving file %1$s</string>
+    <string name="event_nfc_attach">--- %1$s Card [%2$s] Attached! [%3$s]</string>
+    <string name="event_nfc_lost">No Attached Card!</string>
+    <string name="event_p2p_connect">Send Data Failed!</string>
+    <string name="event_nfc_rsp">No Respones!</string>
+    <string name="event_p2p_disable">WiFi Direct Disabled!</string>
+    <string name="event_p2p_version">Both of service version are %1$s</string>
+    <string name="event_p2p_version2">Service versions are different, Peer\'s is %1$s while mine is %2$s, Maybe not work!</string>
+    <string name="info_discovering">Discovering peers &#8230;</string>
+    <string name="info_connect">Connect to %1$s ?</string>
+    <string name="info_connecting">Connecting to %1$s &#8230;</string>
+    <string name="info_disconnect">Disconnect from %1$s ?</string>
+    <string name="info_about">
+	<![CDATA[
+    <div>NFC Spy make it easy to watch APDUs transceived between reader and contactless smart card. <p />
+    By <a href="mailto:sinpowei@gmail.com">sinpowei</a>, 2014. <div>
+    ]]>
+    </string>
+
+</resources>

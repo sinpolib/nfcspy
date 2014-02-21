@@ -1,0 +1,31 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    android:padding="@dimen/margin_window" >
+
+    <EditText
+        android:id="@+id/file"
+        style="@style/label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_window"
+        android:gravity="bottom"
+        android:textStyle="bold"
+        android:hint="@string/hint_file"
+        android:singleLine="true" />
+
+    <View style="@style/splitter" />
+
+    <EditText
+        android:id="@+id/note"
+        style="@style/label"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:hint="@string/hint_note"
+        android:inputType="textMultiLine"
+        android:singleLine="false" />
+
+</LinearLayout>

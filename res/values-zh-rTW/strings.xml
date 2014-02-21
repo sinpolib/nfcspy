@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">NFC Spy</string>
+    <string name="action_about">關於</string>
+    <string name="action_ok">確定</string>
+    <string name="action_cancel">取消</string>
+    <string name="action_viewlogs">查看記錄資料緩存</string>
+    <string name="action_clearlogs">清理記錄資料緩存</string>
+    <string name="action_copy">複製</string>
+    <string name="action_save">儲存記錄資料</string>
+    <string name="action_share">分享</string>
+    <string name="action_settings">管理 WiFi Direct</string>
+    <string name="status_waitting">等待中&#8230;</string>
+    <string name="status_success">成功！</string>
+    <string name="status_failure">失敗！</string>
+    <string name="status_no_nfc">NFC 沒有開啟！</string>
+    <string name="status_no_hce">HCE 不受支援! (需要4.4或更高版本的系統)</string>
+    <string name="status_no_wifi">WiFi 沒有開啟！</string>
+    <string name="status_deactivated">--- %1$s HCE 會話終止 [%2$s]</string>
+    <string name="status_init">初始化</string>
+    <string name="status_getaddr">取得 WiFi Direct 網路位址</string>
+    <string name="status_disconn">關閉 Socket\u0020</string>
+    <string name="status_connect">開啟 Socket\u0020</string>
+    <string name="status_p2p_accept">Group Owner 開啟伺服器端 Socket\u0020</string>
+    <string name="status_p2p_client">用戶端 Socket 連接 Group Owner\u0020</string>
+    <string name="status_p2p_connected">已連接</string>
+    <string name="status_p2p_invited">邀請函已傳送</string>
+    <string name="status_p2p_failed">連線失敗</string>
+    <string name="status_p2p_available">可用</string>
+    <string name="status_p2p_unavailable">無法使用</string>
+    <string name="hint_chat">輸入文字訊息</string>
+    <string name="hint_file">檔案名稱</string>
+    <string name="hint_note">備註訊息 [可選]</string>
+    <string name="lab_chat">發送</string>
+    <string name="lab_clear">清屏</string>
+    <string name="lab_start">啟動</string>
+    <string name="lab_stop">停止</string>
+    <string name="lab_highspeed">高速</string>
+    <string name="lab_p2p">管理 WiFi Direct</string>
+    <string name="lab_p2p_discover">搜尋裝置</string>
+    <string name="lab_p2p_connect">連線</string>
+    <string name="lab_p2p_disconnect">中斷連線</string>
+    <string name="lab_p2p_me">本機</string>
+    <string name="lab_p2p_peers">對端裝置</string>
+    <string name="lab_carddesc">NFC Spy 虛擬卡</string>
+    <string name="lab_aiddesc_main">AID_GROUP_MAIN</string>
+    <string name="lab_aiddesc_other">AID_GROUP_OTHER</string>
+    <string name="event_log_copy">訊息已複製到剪貼簿</string>
+    <string name="event_log_save">訊息已儲存到 %1$s</string>
+    <string name="event_log_notsave">儲存 %1$s 時發生錯誤</string>
+    <string name="event_nfc_attach">--- %1$s 卡片[%2$s]進入讀卡區！[%3$s]</string>
+    <string name="event_nfc_lost">沒有卡片或卡片已被移離</string>
+    <string name="event_p2p_connect">傳送數據失敗！</string>
+    <string name="event_nfc_rsp">沒有應答 APDU</string>
+    <string name="event_p2p_disable">WiFi Direct 已被關閉！</string>
+    <string name="event_p2p_version">雙方程式版本均為%1$s</string>
+    <string name="event_p2p_version2">雙方程式版本不同，對端：%1$s，本機：%2$s，可能無法協同作業！</string>
+    <string name="info_discovering">正在搜尋對端裝置&#8230;</string>
+    <string name="info_connect">連線 %1$s 嗎?</string>
+    <string name="info_connecting">正在連線 %1$s &#8230;</string>
+    <string name="info_disconnect">中斷與 %1$s 的連線？</string>
+    <string name="info_about">
+<![CDATA[
+    <div>NFC Spy用來偵測 Reader 與智能卡之間的數據傳送。<p />
+    作者：<a href="mailto:sinpowei@gmail.com">sinpowei</a>，2014<div>
+    ]]>
+    </string>
+
+</resources>
