@@ -10,6 +10,7 @@
     <string name="action_copy">Copy</string>
     <string name="action_save">Save Logs</string>
     <string name="action_share">Share</string>
+    <string name="action_discoverydelay">Card Discovery Delay</string>
     <string name="action_settings">Manage WiFi Direct</string>
     <string name="status_waitting">Waitting&#8230;</string>
     <string name="status_success">\u0020Successful!</string>
@@ -31,6 +32,7 @@
     <string name="status_p2p_unavailable">Unavailable</string>
     <string name="hint_chat">Type Message</string>
     <string name="hint_file">Log file name</string>
+    <string name="hint_discoverydelay">Default 1000ms</string>
     <string name="hint_note">Notes [Optional]</string>
     <string name="lab_chat">Send</string>
     <string name="lab_clear">Clear</string>
@@ -44,6 +46,7 @@
     <string name="lab_p2p_me">Me</string>
     <string name="lab_p2p_peers">Peers</string>
     <string name="lab_carddesc">NFCSpy Card</string>
+    <string name="lab_discoverydelay">Set the delay system will use for performing presence checks on any discovered tag in NFC reader mode. Can be used to prevent irrelevant instructions disturb current session state, but setting too long will reduce card detection sensitivity. Only works for current program, in milliseconds:</string>
     <string name="lab_aiddesc_main">AID_GROUP_MAIN</string>
     <string name="lab_aiddesc_other">AID_GROUP_OTHER</string>
     <string name="event_log_copy">All data has been copied to clipboard</string>

@@ -98,7 +98,7 @@ final class ServiceAgent extends BroadcastReceiver implements ChannelListener,
 			break;
 
 		case MSG_HCE_DEACTIVATED:
-			NfcManager.closeConnect(isodep);
+			NfcManager.disconnect(isodep);
 			Logger.logHceDeactive();
 			sendStatus2Activity(MSG_HCE_DEACTIVATED, STA_NOTCARE, 0);
 			break;
@@ -193,9 +193,7 @@ final class ServiceAgent extends BroadcastReceiver implements ChannelListener,
 
 		if (cmd != null && cmd.length > 0) {
 
-			byte[] rsp = NfcManager.transceiveApdu(isodep, cmd);
-			if (rsp == null)
-				rsp = NfcManager.transceiveApdu(isodep, 20000, cmd);
+			final byte[] rsp = NfcManager.transceiveApdu(isodep, cmd);
 
 			final long stampRsp = System.currentTimeMillis();
 

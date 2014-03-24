@@ -178,38 +178,59 @@
 		</class>
 	</cmds>
 	<sws>
-	    <sw1 val="61" name="More Data" />
-	    <sw1 val="62" name="Warning">
+	    <sw1 val="61" name="More data" />
+	    <sw1 val="62" name="State of non-volatile memory unchanged">
+	        <sw2 val="01" name="NV-Ram not changed" />
 	        <sw2 val="81" name="Part of returned data may be corrupted" />
 	        <sw2 val="82" name="End of file or record reached before reading Ne bytes" />
 	        <sw2 val="83" name="Selected file deactivated" />
 	        <sw2 val="84" name="File control information not formatted" />
 	        <sw2 val="85" name="Selected file in termination state" />
 	        <sw2 val="86" name="No input data available from a sensor on the card" />
+	        <sw2 val="A2" name="Wrong R-MAC" />
+	        <sw2 val="A4" name="Card locked" />
+	        <sw2 val="F1" name="Wrong C-MAC" />
+	        <sw2 val="F3" name="Internal reset" />
+	        <sw2 val="F5" name="Default agent locked" />
+	        <sw2 val="F7" name="Cardholder locked" />
+	        <sw2 val="F8" name="Basement is current agent" />
+	        <sw2 val="F9" name="CALC Key Set not unblocked" />
 	    </sw1>
-	    <sw1 val="63" name="Warning">
+	    <sw1 val="63" name="State of non-volatile memory changed">
 	        <sw2 val="81" name="File filled up by the last write" />
+	        <sw2 val="82" name="Card key not supported" />
+	        <sw2 val="83" name="Reader key not supported" />
+	        <sw2 val="84" name="Plaintext transmission not supported" />
+	        <sw2 val="85" name="Secured transmission not supported" />
+	        <sw2 val="86" name="Volatile memory is not available" />
+	        <sw2 val="87" name="Non-volatile memory is not available" />
+	        <sw2 val="88" name="Key number not valid" />
+	        <sw2 val="89" name="Key length is not correct" />
+	        <sw2 val="C0" name="Verify fail, no try left" />
+	        <sw2 val="C1" name="Verify fail, 1 try left" />
+	        <sw2 val="C2" name="Verify fail, 2 tries left" />
+	        <sw2 val="C3" name="Verify fail, 3 tries left" />
 	    </sw1>
-	    <sw1 val="64" name="Execution Error">
-	        <sw2 val="01" name="mmediate response required by the card" />
+	    <sw1 val="64" name="Execution error">
+	        <sw2 val="01" name="Command timeout" />
 	    </sw1>
-	    <sw1 val="65" name="Execution Error">
+	    <sw1 val="65" name="Execution error">
+	        <sw2 val="01" name="Write error" />
 	        <sw2 val="81" name="Memory failure" />
 	    </sw1>
-	    <sw1 val="66" name="Security Issues">
-	        <sw2 val="00" name="OK" />
-	        <sw2 val="00" name="OK" />
-	        <sw2 val="00" name="OK" />
-	        <sw2 val="00" name="OK" />
+	    <sw1 val="66" name="Security issues">
+	        <sw2 val="69" name="Incorrect Encryption/Decryption Padding" />
 	    </sw1>
-	    <sw1 val="67" name="Wrong Length" />
-	    <sw1 val="68" name="CLA Not Supported">
+	    <sw1 val="67" name="Wrong length" />
+	    <sw1 val="68" name="CLA not supported">
 	        <sw2 val="81" name="Logical channel not supported" />
 	        <sw2 val="82" name="Secure messaging not supported" />
 	        <sw2 val="83" name="Last command of the chain expected" />
 	        <sw2 val="84" name="Command chaining not supported" />
 	    </sw1>
-	    <sw1 val="69" name="Command Not Allowed">
+	    <sw1 val="69" name="Command not allowed">
+	        <sw2 val="00" name="Invalid CLA" />
+	        <sw2 val="01" name="Invalid status" />
 	        <sw2 val="81" name="Command incompatible with file structure" />
 	        <sw2 val="82" name="Security status not satisfied" />
 	        <sw2 val="83" name="Authentication method blocked" />
@@ -218,6 +239,9 @@
 	        <sw2 val="86" name="Command not allowed (no current EF)" />
 	        <sw2 val="87" name="Expected secure messaging data objects missing" />
 	        <sw2 val="88" name="Incorrect secure messaging data objects" />
+	        <sw2 val="96" name="Data must be updated again" />
+	        <sw2 val="F0" name="Permission denied" />
+	        <sw2 val="F1" name="Permission denied" />
 	    </sw1>
 	    <sw1 val="6A" name="Wrong P1-P2">
 	        <sw2 val="80" name="Incorrect parameters in the command data field" />
@@ -236,14 +260,22 @@
 	    <sw1 val="6C" name="Wrong Le Field" />
 	    <sw1 val="6D" name="INS Not Supported" />  
 	    <sw1 val="6E" name="CLA Not Supported" />
-	    <sw1 val="6F" name="No Precise Diagnosis" />
+	    <sw1 val="6F" name="Internal exception" >
+	        <sw2 val="00" name="Command aborted" />
+	        <sw2 val="FF" name="Card dead" />
+	    </sw1>
 	    <sw1 val="90" name="Normal">
 	        <sw2 val="00" name="OK" />
+	        <sw2 val="04" name="PIN not successfully verified, 3 or more PIN tries left" />
+	        <sw2 val="08" name="Key/file not found" />
+	        <sw2 val="80" name="Unblock Try Counter has reached zero" />
 	    </sw1>
 	    <sw1 val="91" name="Wrapping of native DESFire APDUs">
 	        <sw2 val="00" name="OK" />
+	        <sw2 val="01" name="States has wrong value" />
+	        <sw2 val="02" name="Transaction number reached its limit" />
 	        <sw2 val="0C" name="No changes" />
-	        <sw2 val="0E" name="Insufficient NV-Memory to complete command" />
+	        <sw2 val="0E" name="Insufficient NV-Memory to complete command" />	        
 	        <sw2 val="1C" name="Command code not supported" />
 	        <sw2 val="1E" name="CRC or MAC does not match data" />
 	        <sw2 val="40" name="Invalid key number specified" />
@@ -268,10 +300,30 @@
 	        <sw2 val="10" name="Insufficient memory" />
 	        <sw2 val="40" name="Writing to EEPROM not successful" />
 	    </sw1>
+	    <sw1 val="93" name="Integrity error" >
+	        <sw2 val="02" name="Wrong MAC" />
+	        <sw2 val="03" name="Application has been locked" />
+	    </sw1>
 	    <sw1 val="94" name="No EF selected">
-	        <sw2 val="02" name="Address range exceeded" />
-	        <sw2 val="04" name="Not found" />
+	        <sw2 val="01" name="Candidate currency code does not match purse currency" />
+	        <sw2 val="02" name="Candidate amount too high" />
+	        <sw2 val="03" name="Key not found" />
+	        <sw2 val="04" name="Key not found" />
+	        <sw2 val="05" name="Problems in the data field" />
+	        <sw2 val="06" name="Bad MAC" />
+	        <sw2 val="07" name="Bad currency" />
 	        <sw2 val="08" name="Selected file type does not match command" />
+	    </sw1>
+	    <sw1 val="97" name="Key error">
+	        <sw2 val="00" name="PIN blocked and Unblock Try Counter is 1 or 2" />
+	        <sw2 val="02" name="Main keys are blocked" />
+	        <sw2 val="04" name="PIN not successfully verified, 3 or more PIN tries left" />
+	        <sw2 val="84" name="Base key" />
+	        <sw2 val="85" name="Limit exceeded - C-MAC key" />
+	        <sw2 val="86" name="SM error - Limit exceeded - R-MAC key" />
+	        <sw2 val="87" name="Limit exceeded - sequence counter" />
+	        <sw2 val="88" name="Limit exceeded - R-MAC length" />
+	        <sw2 val="89" name="Service not available" />
 	    </sw1>
 	    <sw1 val="98" name="Wrong P1-P2">
 	        <sw2 val="02" name="No PIN defined" />
@@ -280,6 +332,6 @@
 	        <sw2 val="40" name="PIN verification not successful" />
 	        <sw2 val="50" name="INCREASE or DECREASE could not be executed because a limit has been reached" />
 	    </sw1>
-	    <sw1 val="9F" name="More Data" />
+	    <sw1 val="9F" name="More data" />
 	</sws>
 </apdu>

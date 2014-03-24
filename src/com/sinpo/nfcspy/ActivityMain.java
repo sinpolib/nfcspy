@@ -39,6 +39,8 @@ import static com.sinpo.nfcspy.ServiceFactory.STA_SUCCESS;
 import java.io.File;
 import java.io.FileOutputStream;
 
+import com.sinpo.nfcspy.NfcManager.TagListener;
+
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -51,10 +53,12 @@ import android.os.Messenger;
 import android.text.ClipboardManager;
 import android.text.Html;
 import android.text.TextUtils;
+import android.text.method.DigitsKeyListener;
 import android.text.method.LinkMovementMethod;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -62,24 +66,24 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class ActivityMain extends ActivityBase implements Handler.Callback {
+public class ActivityMain extends ActivityBase implements Handler.Callback,
+		TagListener {
 
 	public ActivityMain() {
 		inbox = new Messenger(new Handler(this));
 	}
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		
+
 		messages = new ArrayAdapter<CharSequence>(this,
 				R.layout.listitem_message);
 
 		((ListView) findViewById(R.id.list)).setAdapter(messages);
 
 		messageView = (TextView) findViewById(R.id.txtChatLine);
-
 
 		nfc = new NfcManager(this);
 	}
@@ -110,6 +114,9 @@ public class ActivityMain extends ActivityBase implements Handler.Callback {
 			return true;
 		case R.id.action_clearlogs:
 			clearHCELogs();
+			return true;
+		case R.id.action_discoverydelay:
+			setDiscoveryDelay();
 			return true;
 		case R.id.action_about:
 			showHelp();
@@ -157,7 +164,7 @@ public class ActivityMain extends ActivityBase implements Handler.Callback {
 	@Override
 	protected void onResume() {
 		super.onResume();
-		nfc.onResume();
+		nfc.onResume(this);
 	}
 
 	@Override
@@ -174,6 +181,11 @@ public class ActivityMain extends ActivityBase implements Handler.Callback {
 
 	@Override
 	protected void onNewIntent(Intent intent) {
+		onNewTagIntent(intent);
+	}
+
+	@Override
+	public void onNewTagIntent(Intent intent) {
 		ServiceFactory.setTag2Server(this, intent);
 	}
 
@@ -345,6 +357,24 @@ public class ActivityMain extends ActivityBase implements Handler.Callback {
 		Logger.clearCachedLogs();
 	}
 
+	private void setDiscoveryDelay() {
+
+		final EditText input = new EditText(this);
+		input.setHint(this.getString(R.string.hint_discoverydelay));
+		input.setText(Integer.toString(nfc.getDiscoveryDelay()));
+		input.setInputType(EditorInfo.TYPE_CLASS_NUMBER);
+		input.setKeyListener(DigitsKeyListener.getInstance("01234567890"));
+		input.setSingleLine(true);
+
+		SetDelayHelper helper = new SetDelayHelper(nfc, input);
+
+		new AlertDialog.Builder(this, AlertDialog.THEME_HOLO_LIGHT)
+				.setTitle(R.string.action_discoverydelay)
+				.setMessage(R.string.lab_discoverydelay).setView(input)
+				.setPositiveButton(R.string.action_ok, helper)
+				.setNegativeButton(R.string.action_cancel, helper).show();
+	}
+
 	private void showHelp() {
 		CharSequence title = Logger.fmt("%s v%s", ThisApplication.name(),
 				ThisApplication.version());
@@ -393,6 +423,43 @@ public class ActivityMain extends ActivityBase implements Handler.Callback {
 		}
 
 		return ret;
+	}
+
+	private static final class SetDelayHelper implements
+			DialogInterface.OnClickListener {
+
+		SetDelayHelper(NfcManager nfc, EditText input) {
+			this.nfc = nfc;
+			this.input = input;
+		}
+
+		@Override
+		public void onClick(DialogInterface dialog, int which) {
+			if (which == DialogInterface.BUTTON_POSITIVE) {
+				CharSequence text = input.getText();
+				if (TextUtils.isEmpty(text))
+					text = "";
+
+				int delay = -1;
+				try {
+					delay = Integer.parseInt(text.toString().trim());
+				} catch (Exception e) {
+					delay = -1;
+				}
+
+				if (delay < 100)
+					delay = nfc.getDiscoveryDelay();
+
+				nfc.setDiscoveryDelay(delay);
+			}
+
+			nfc = null;
+			input = null;
+			dialog.dismiss();
+		}
+
+		private NfcManager nfc;
+		private EditText input;
 	}
 
 	private static final class SaveLogHelper implements

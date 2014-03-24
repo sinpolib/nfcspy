@@ -10,6 +10,7 @@
     <string name="action_copy">複製</string>
     <string name="action_save">儲存記錄資料</string>
     <string name="action_share">分享</string>
+    <string name="action_discoverydelay">卡片探測延遲</string>
     <string name="action_settings">管理 WiFi Direct</string>
     <string name="status_waitting">等待中&#8230;</string>
     <string name="status_success">成功！</string>
@@ -31,6 +32,7 @@
     <string name="status_p2p_unavailable">無法使用</string>
     <string name="hint_chat">輸入文字訊息</string>
     <string name="hint_file">檔案名稱</string>
+    <string name="hint_discoverydelay">默認1000毫秒</string>
     <string name="hint_note">備註訊息 [可選]</string>
     <string name="lab_chat">發送</string>
     <string name="lab_clear">清屏</string>
@@ -44,6 +46,7 @@
     <string name="lab_p2p_me">本機</string>
     <string name="lab_p2p_peers">對端裝置</string>
     <string name="lab_carddesc">NFC Spy 虛擬卡</string>
+    <string name="lab_discoverydelay">設置讀卡模式下的卡片探測延遲時間。可用來防止探測指令幹擾會話狀態，但設置過大會降低卡片探測靈敏度。僅適用於當前程序，單位毫秒：</string>
     <string name="lab_aiddesc_main">AID_GROUP_MAIN</string>
     <string name="lab_aiddesc_other">AID_GROUP_OTHER</string>
     <string name="event_log_copy">訊息已複製到剪貼簿</string>

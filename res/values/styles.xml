@@ -1,6 +1,6 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <style name="AppBaseTheme" parent="@android:style/Theme.Light" />
+    <style name="AppBaseTheme" parent="android:Theme.Holo.Light.DarkActionBar" />
 
     <style name="AppTheme" parent="AppBaseTheme">
         <item name="android:windowBackground">@color/bg_window</item>

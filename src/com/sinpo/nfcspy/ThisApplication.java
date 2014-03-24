@@ -18,14 +18,16 @@ package com.sinpo.nfcspy;
 import java.lang.Thread.UncaughtExceptionHandler;
 
 import android.app.Application;
+import android.content.SharedPreferences;
 import android.content.res.XmlResourceParser;
+import android.preference.PreferenceManager;
 
 public final class ThisApplication extends Application implements
 		UncaughtExceptionHandler {
 	final static int PRIORITY_HIGH = android.os.Process.THREAD_PRIORITY_URGENT_AUDIO;
 	final static int PRIORITY_NORMAL = android.os.Process.THREAD_PRIORITY_FOREGROUND;
 	final static int PRIORITY_LOW = android.os.Process.THREAD_PRIORITY_DEFAULT;
-	
+
 	@Override
 	public void uncaughtException(Thread thread, Throwable ex) {
 		System.exit(0);
@@ -35,14 +37,14 @@ public final class ThisApplication extends Application implements
 	public void onCreate() {
 		super.onCreate();
 
-		//Thread.setDefaultUncaughtExceptionHandler(this);
-		
+		// Thread.setDefaultUncaughtExceptionHandler(this);
+
 		if (getCurrentThreadPriority() > PRIORITY_NORMAL)
 			setCurrentThreadPriority(PRIORITY_NORMAL);
 
 		instance = this;
 	}
-	
+
 	static int getCurrentThreadPriority() {
 		try {
 			int tid = android.os.Process.myTid();
@@ -51,7 +53,7 @@ public final class ThisApplication extends Application implements
 			return PRIORITY_LOW;
 		}
 	}
-	
+
 	static void setCurrentThreadPriority(int priority) {
 		try {
 			int tid = android.os.Process.myTid();
@@ -80,10 +82,22 @@ public final class ThisApplication extends Application implements
 	static String getStringResource(int resId) {
 		return instance.getString(resId);
 	}
-	
+
 	static XmlResourceParser getXmlResource(int resId) {
 		return instance.getResources().getXml(resId);
 	}
-	
+
+	static int getPreference(String key, int defValue) {
+		return getPreferences().getInt(key, defValue);
+	}
+
+	static void setPreference(String key, int value) {
+		getPreferences().edit().putInt(key, value).commit();
+	}
+
+	static SharedPreferences getPreferences() {
+		return PreferenceManager.getDefaultSharedPreferences(instance);
+	}
+
 	private static ThisApplication instance;
 }

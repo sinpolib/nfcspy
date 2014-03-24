@@ -10,6 +10,7 @@
     <string name="action_copy">拷贝</string>
     <string name="action_save">保存日志</string>
     <string name="action_share">分享</string>
+    <string name="action_discoverydelay">卡片探测延迟</string>
     <string name="action_settings">管理 WLAN 直连</string>
     <string name="status_waitting">等待中&#8230;</string>
     <string name="status_success">成功！</string>
@@ -31,6 +32,7 @@
     <string name="status_p2p_unavailable">不可用</string>
     <string name="hint_chat">输入文字信息</string>
     <string name="hint_file">文件名</string>
+    <string name="hint_discoverydelay">默认1000毫秒</string>
     <string name="hint_note">备注信息 [可选]</string>
     <string name="lab_chat">发送</string>
     <string name="lab_clear">清屏</string>
@@ -44,6 +46,7 @@
     <string name="lab_p2p_me">本机</string>
     <string name="lab_p2p_peers">对等设备</string>
     <string name="lab_carddesc">NFC Spy 虚拟卡</string>
+    <string name="lab_discoverydelay">设置读卡模式下的卡片探测延迟时间。可用来防止探测指令干扰会话状态，但设置过大会降低卡片探测灵敏度。仅对当前程序有效，单位毫秒：</string>
     <string name="lab_aiddesc_main">AID_GROUP_MAIN</string>
     <string name="lab_aiddesc_other">AID_GROUP_OTHER</string>
     <string name="event_log_copy">信息已经被拷贝到剪贴板</string>
