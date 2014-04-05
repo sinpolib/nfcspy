@@ -402,8 +402,9 @@ public class ActivityMain extends ActivityBase implements Handler.Callback,
 			EditText note = (EditText) root.findViewById(R.id.note);
 
 			SaveLogHelper helper = new SaveLogHelper(logs, name, note);
-
-			new AlertDialog.Builder(this, AlertDialog.THEME_HOLO_LIGHT)
+			
+			setTheme(android.R.style.Theme_Holo_Light);
+			new AlertDialog.Builder(this)
 					.setTitle(R.string.action_save).setView(root)
 					.setNegativeButton(R.string.action_cancel, helper)
 					.setPositiveButton(R.string.action_ok, helper).show();

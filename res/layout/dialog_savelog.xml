@@ -13,9 +13,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_window"
         android:gravity="bottom"
-        android:textStyle="bold"
         android:hint="@string/hint_file"
-        android:singleLine="true" />
+        android:imeOptions="flagNoFullscreen"
+        android:singleLine="true"
+        android:textStyle="bold" />
 
     <View style="@style/splitter" />
 
@@ -23,8 +24,9 @@
         android:id="@+id/note"
         style="@style/label"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="96dp"
         android:hint="@string/hint_note"
+        android:imeOptions="flagNoFullscreen"
         android:inputType="textMultiLine"
         android:singleLine="false" />
 

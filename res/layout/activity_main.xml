@@ -1,28 +1,31 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true"
     android:padding="@dimen/margin_window" >
 
     <LinearLayout
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true" >
 
         <Button
             style="@style/button"
             android:layout_width="@dimen/width_button"
             android:onClick="startServer"
             android:text="@string/lab_start" />
-        
+
         <Button
             style="@style/button"
             android:layout_width="@dimen/width_button"
             android:onClick="stopServer"
             android:text="@string/lab_stop" />
-        
+
         <View
-            android:layout_height="match_parent"
             android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_weight="1" />
 
         <CheckBox
@@ -38,52 +41,52 @@
             android:text="@string/lab_clear" />
     </LinearLayout>
 
-    <View style="@style/splitter"
+    <View
+        android:id="@+id/splitter"
+        style="@style/splitter"
+        android:layout_below="@id/toolbar"
         android:layout_marginBottom="0dp" />
 
-    <RelativeLayout
+    <LinearLayout
+        android:id="@+id/chatBar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:descendantFocusability="beforeDescendants"
-        android:focusableInTouchMode="true" >
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/bg_window" >
 
-        <View
-            android:id="@+id/splitter"
-            style="@style/splitter"
-            android:layout_above="@+id/chatBar"
-            android:layout_marginTop="0dp"
-            android:layout_marginBottom="@dimen/margin_splitter" />
+        <EditText
+            android:id="@+id/txtChatLine"
+            style="@style/editor"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:hint="@string/hint_chat"
+            android:imeOptions="flagNoFullscreen"
+            android:minHeight="@dimen/height_label"
+            android:paddingBottom="@dimen/margin_input" >
+        </EditText>
 
-        <LinearLayout
-            android:id="@+id/chatBar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true" >
+        <Button
+            style="@style/button"
+            android:onClick="sendChatMessage"
+            android:text="@string/lab_chat" />
+    </LinearLayout>
 
-            <EditText
-                android:id="@+id/txtChatLine"
-                style="@style/editor"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:paddingBottom="@dimen/margin_input"
-                android:hint="@string/hint_chat" >
-            </EditText>
+    <View
+        android:id="@+id/splitter2"
+        style="@style/splitter"
+        android:layout_above="@id/chatBar"
+        android:layout_marginBottom="@dimen/margin_splitter"
+        android:layout_marginTop="0dp" />
 
-            <Button
-                style="@style/button"
-                android:onClick="sendChatMessage"
-                android:text="@string/lab_chat" />
-        </LinearLayout>
+    <ListView
+        android:id="@+id/list"
+        style="@style/list"
+        android:layout_above="@id/splitter2"
+        android:layout_below="@id/splitter"
+        android:divider="@null"
+        android:listSelector="#00000000"
+        android:paddingBottom="@dimen/margin_window"
+        android:paddingTop="@dimen/margin_window"
+        android:transcriptMode="alwaysScroll" />
 
-        <ListView
-            android:id="@+id/list"
-			style="@style/list"
-            android:layout_above="@+id/splitter"
-            android:divider="@null"
-            android:listSelector="#00000000"
-            android:paddingTop="@dimen/margin_window"
-            android:paddingBottom="@dimen/margin_window"
-            android:transcriptMode="alwaysScroll" />
-    </RelativeLayout>
-
-</LinearLayout>
+</RelativeLayout>
