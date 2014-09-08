@@ -176,7 +176,10 @@ final class ServiceAgent extends BroadcastReceiver implements ChannelListener,
 
 			if (!p2p.isInited()) {
 				p2p.init(service, this);
-				service.registerReceiver(this, P2PFILTER);
+				if (!hasRegistered) {
+					service.registerReceiver(this, P2PFILTER);
+					hasRegistered = true;
+				}
 				sendStatus2Activity(MSG_P2P_INIT, STA_SUCCESS, STA_NOTCARE);
 			}
 
@@ -278,7 +281,11 @@ final class ServiceAgent extends BroadcastReceiver implements ChannelListener,
 	}
 
 	void onDestroy() {
-		service.unregisterReceiver(this);
+		if (hasRegistered) {
+			service.unregisterReceiver(this);
+			hasRegistered = false;
+		}
+
 		onCardDettached(null);
 		disconnect();
 	}
@@ -374,6 +381,7 @@ final class ServiceAgent extends BroadcastReceiver implements ChannelListener,
 	private IsoDep isodep;
 	private Messenger outbox;
 	private boolean lock;
+	private boolean hasRegistered;
 
 	private static boolean highSpeed;
 
