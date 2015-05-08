@@ -66,7 +66,9 @@
     <string name="info_about">
 	<![CDATA[
     <div>NFC Spy make it easy to watch APDUs transceived between reader and contactless smart card. <p />
-    By <a href="mailto:sinpowei@gmail.com">sinpowei</a>, 2014. <div>
+    <br />This is a free and opensource software. You can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, Either version 3 of the license, or (at your option) any later version. See <a href="http://www.gnu.org/licenses/gpl.txt">www.gnu.org/licenses/gpl.txt</a>.<br />
+	<br />Newest version and source code can be found at <a href="https://github.com/sinpolib/nfcspy/">github.com/sinpolib/nfcspy</a><br />
+    <br />By <a href="mailto:sinpowei@gmail.com">Sinpo Lib</a>, 2015. <div>
     ]]>
     </string>
 

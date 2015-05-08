@@ -1,9 +1,10 @@
-# nfcspy
+# NFC Spy
+
 NFC Spy is an Android app, It can watch APDUs transceived between reader and contactless smart card.
 
 The latest version will be published in https://play.google.com/store/apps/details?id=com.sinpo.nfcspy
 
----------------------------------------------------------------------------
+-------
 
 This is useful for NFC/HCE developer to learn about the underlying communication protocol, debugging equential error, etc. However, you should NOT use it for illegal acts, or you will be solely responsible for any consequences thereof. In addition, this app may be need to root/modify your system to work better, please be careful when doing this, and again, Developer of this app do NOT accept any responsibility.
 
@@ -26,3 +27,12 @@ If you also installed other HCE apps, you may see multiple items in the 'Tap & P
 Android's HCE architecture use HCE service to implement card emulation, every service need to declare AIDs it will respone when card reader select application by aid. This leads to three problems, first, only ISO14443-A/ISO7816 compatible smart card can be emulated, second is NFC Spy can only handle limited card type, the last is HCE only works with card reader which send a stardard ISO7816 SELECT NAME/AID command as the first APDU.
 
 The first problem can NOT be resolved for the time being, unless you switch to other implemention of card emulation such as some versions of CyanogenMod?, but what will be another story. To solve the second, you can use a rooted phone with Xposed framework, add NFC Spy or 'NFC Card-Emulation Catch-All Routing' mod. To solve the last one, you may need a custom ROM which has modified system libaray.
+
+
+
+License
+-------
+NFC Spy is licensed under GNU GPLv3 - see the ``LICENSE`` file.
+
+
+
