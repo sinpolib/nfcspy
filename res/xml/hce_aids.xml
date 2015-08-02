@@ -17,6 +17,9 @@
         <aid-filter android:name="A000000333010102" /> <!-- union pay credit -->
         <aid-filter android:name="A000000333010103" /> <!-- union pay quasi-credit -->
         <aid-filter android:name="A000000333010106" /> <!-- union pay electronic cash -->
+        
+        <aid-filter android:name="A000000632010105" /> <!-- t-union e-cash (china) -->
+        <aid-filter android:name="A000000632010106" /> <!-- t-union e-purse (china) -->
 
         <aid-filter android:name="A0000000031010" /> <!-- visa credit or debit -->
         <aid-filter android:name="A0000000032010" /> <!-- visa electron -->

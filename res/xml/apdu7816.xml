@@ -164,7 +164,7 @@
 			<ins name="Read Record Stamped" val="B6" spec="EN726" />
 			<ins name="Get Response" val="C0" spec="TS51.011" />
 			<ins name="Envelope" val="C2" spec="EN726" />
-			<ins name="Get Lock Proof" val="CA" spec="PBOC" />
+			<ins name="Get Data" val="CA" spec="PBOC" />
 			<ins name="Extend" val="D4" spec="EN726" />
 			<ins name="Load Key File Lock Manage Channel" val="D8" spec="OP" />
 			<ins name="Update CAPP Data Cache" val="DC" spec="OP" />
